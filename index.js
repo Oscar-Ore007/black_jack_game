@@ -1,4 +1,8 @@
+let player = {
+    name: "Oscar",
+    chips: 145
 
+}
 
 
 let cards = [] //ordered list of items 
@@ -10,6 +14,12 @@ let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
+let playerEl =document.getElementById("player-el")
+
+
+
+
+playerEl.textContent = player.name + ": $" + player.chips
 
 //made the function return a random number between 1 and 13 
 function getRandomCard() {
@@ -56,13 +66,13 @@ function renderGame() {
        console.log("Drawing a new card from the deck!")
 
     if (isAlive === true && hasBlackJack === false ) {
-
+        let card = getRandomCard()
+        sum += card 
+        cards.push(card)
+        console.log(cards)
+        renderGame()
     }
-       let card = getRandomCard()
-       sum += card 
-       cards.push(card)
-       console.log(cards)
-       renderGame()
+      
    }
 
 
