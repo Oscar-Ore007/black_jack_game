@@ -25,7 +25,7 @@ function getRandomCard() {
 
 function startGame () {
     isAlive = true 
-    let firsrtCard = getRandomCard()
+    let firstCard = getRandomCard()
     let secondCard = getRandomCard()
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
@@ -55,6 +55,9 @@ function renderGame() {
    function newCard() {
        console.log("Drawing a new card from the deck!")
 
+    if (isAlive === true && hasBlackJack === false ) {
+
+    }
        let card = getRandomCard()
        sum += card 
        cards.push(card)
